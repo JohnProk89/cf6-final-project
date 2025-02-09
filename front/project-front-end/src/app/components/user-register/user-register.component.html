@@ -1,0 +1,42 @@
+@if(registrationStatus.message === "Not attempted yet"){
+    <div class="d-flex flex-column">
+        <h5>Register User Form</h5>
+        <form [formGroup]="userRegisterForm" class="d-flex flex-column">
+            <mat-form-field>
+                <mat-label>Username</mat-label>
+                <input matInput type="text" formControlName="username">
+                <mat-error>Username is required</mat-error>
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Password</mat-label>
+                <input matInput type="text" formControlName="password">
+                <mat-error>Password is required</mat-error>
+            </mat-form-field>
+        </form>
+        <button
+            mat-flat-button
+            [disabled] = "userRegisterForm.invalid"
+            (click) = "onSubmit(userRegisterForm.value)"
+        >
+            Submit
+        </button>
+    </div>
+} @else {
+    @if (registrationStatus.success){
+        <div class="alert alert-success mt-2 w-50">
+             <strong>Success:</strong>{{registrationStatus.message}}
+        </div>
+    } @else {
+        <div class="alert alert-danger mt-2 w-50">
+            <strong>Error:</strong>{{registrationStatus.message}}
+       </div>
+    }
+    <button
+        mat-flat-button
+        color="primary"
+        class="mt-2"
+        (click)="registerAnother()"
+    >
+        Register another user
+    </button>
+}
