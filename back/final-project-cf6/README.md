@@ -7,7 +7,7 @@
 # It might also be needed to run: npm install -g @angular/cli
 
 # To run this project, one terminal is needed to run angular with ng serve
-# It is also suggested to use and IDE such as IntelliJ to run the back end or a second terminal with ./gradlew bootrun"
+# It is also suggested to use and IDE such as IntelliJ to run the back end or a second terminal with ./gradlew bootrun
 
 # On the browser under localhost:8080/h2-console the h2 client can be found
 # One can enter h2 client with username: sa and password:12345
